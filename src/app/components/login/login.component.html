@@ -1,0 +1,32 @@
+<mat-card>
+    <form class="login" (ngSubmit)="handleSubmit(form)" #form="ngForm">
+        <h2 class="login_title">Login</h2>
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input 
+                matInput 
+                type="email" 
+                name="Email" 
+                ngModel 
+                pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" 
+                required
+                value="{{credential.Email}}"
+            >
+        </mat-form-field>
+
+        <div class="login_row">
+            <mat-form-field class="half-width" appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" name="Password" ngModel required value="{{credential.Password}}">
+            </mat-form-field>
+    
+            <mat-form-field class="half-width" appearance="fill">
+                <mat-label>Confirm Password</mat-label>
+                <input matInput type="password" name="ConfirmPassword" ngModel required value="{{credential.ConfirmPassword}}">
+            </mat-form-field>
+        </div>
+
+        <p class="form_error" *ngIf="error">{{error}}</p>
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+    </form>
+</mat-card>
