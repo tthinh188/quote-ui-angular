@@ -3,7 +3,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50%;
+    width: 30%;
     padding: 20px;
 }
 
@@ -27,4 +27,20 @@
 
 .form_error {
     color: red;
+}
+
+button {
+    margin: 10px 0;
+}
+
+@media (max-width: 1080px) {
+    .mat-card {
+        width: 50%;
+    }
+}
+
+@media (max-width: 568px) {
+    .mat-card {
+        width: 80%;
+    }
 }
