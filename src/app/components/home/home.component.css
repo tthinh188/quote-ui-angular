@@ -1,0 +1,49 @@
+.quotes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1400px;
+    margin: 20px auto;
+}
+
+.quote {
+    padding: 20px;
+    width: 280px;
+    margin: 10px;
+    height: 330px;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 4px 3px 8px 0px rgb(100 152 44 /44%);
+    transition-duration: 0.3s;
+    cursor: pointer;
+    color: white;
+    position: relative;
+}
+
+.quote:hover {
+    box-shadow: 4px 3px 11px 6px rgb(100 152 44 /60%);
+    transform: translateY(-3px);
+}
+
+.quote_description {
+    word-wrap: break-word;
+    text-align: center;
+    max-height: 75%;
+    overflow-y: scroll;
+}
+
+.quote_description::-webkit-scrollbar {
+    display: none;
+  }
+
+.quote_time {
+    color: lightgray;
+    font-size: 0.7rem;
+    position: absolute;
+    bottom: 40px;
+}
+
+.quote_contact {
+    position: absolute;
+    bottom: 0px;
+}

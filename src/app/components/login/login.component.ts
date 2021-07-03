@@ -73,6 +73,8 @@ export class LoginComponent implements OnInit {
         this.credentialService.getAccessToken(this.credential)
         .subscribe(res => {
           console.log(res.access_token);
+          localStorage.setItem('access_token', JSON.stringify(res.access_token));
+          window.location.href="/";
         },
         err => {
           console.log(err);

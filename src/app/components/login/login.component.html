@@ -1,7 +1,8 @@
 <mat-card>
     <form class="login" (ngSubmit)="handleSubmit(form)" #form="ngForm">
-        <h2 *ngIf="isLogin" class="login_title">Login</h2>
-        <h2 *ngIf="!isLogin" class="login_title">Register</h2>
+        <mat-icon>lock</mat-icon>
+        <h1 *ngIf="isLogin" class="login_title">Login</h1>
+        <h1 *ngIf="!isLogin" class="login_title">Register</h1>
         <mat-form-field class="full-width" appearance="fill">
             <mat-label>Email</mat-label>
             <input 
