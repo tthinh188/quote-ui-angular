@@ -1,12 +1,12 @@
 <div class="quotes">
-    <ng-container>
+    <ng-container *ngFor="let quote of quotes">
         <div class="quote">
             <h1 class="quote_description">
-                "QuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuasdasdoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuasdasdoteQuoteQuoteQuoteQuoteQuoteQuoteQuoteQuasdasdoteQuoteQuoteQuoteQuote"
+                "{{quote.Task}}"
             </h1>
 
-            <p class="quote_time">2021-06-25T00:00:00</p>
-            <h2 class="quote_contact">Author</h2>
+            <p class="quote_time">{{quote.DueDate}}</p>
+            <h2 class="quote_contact">{{quote.Contact}}</h2>
         </div>
     </ng-container>
 

@@ -3,7 +3,9 @@
     <nav class="header_right">
         <ul>
             <li><a href="/">Home</a></li>
+            <li *ngIf="access_token"><a href="/addQuote">AddQuote</a></li>
             <li *ngIf="!access_token"><a href="/login">Login</a></li>
+            <li *ngIf="access_token" (click)="logout()"><a href="/">Logout</a></li>
         </ul>
     </nav>
 </mat-toolbar>

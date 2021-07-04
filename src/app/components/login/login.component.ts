@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Credential } from 'src/app/module';
-import { CredentialService } from '../services/credentialService';
+import { CredentialService } from '../../services/credentialService';
 
 @Component({
   selector: 'app-login',
@@ -10,13 +10,14 @@ import { CredentialService } from '../services/credentialService';
 })
 
 export class LoginComponent implements OnInit {
+
   credential: Credential = {
     Email: '',
     Password: '',
     ConfirmPassword: '',
     Role: "Member",
   };
-
+  access_token: string = '';
   isLogin: boolean = true;
   errorList: string[] = [];
 
@@ -25,13 +26,13 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  switchMode():void {
+  switchMode(): void {
     this.isLogin = !this.isLogin
   }
 
   handleSubmit(form: NgForm): void {
     this.errorList = [];
-    if(!this.isLogin) {
+    if (!this.isLogin) {
       if (form.valid) {
         if (form.value.Password !== form.value.ConfirmPassword) {
           this.errorList.push("Password does not match");
@@ -48,10 +49,10 @@ export class LoginComponent implements OnInit {
             .subscribe(res => {
               console.log(res);
             },
-            err => {
-              const result = Object.keys(err.error.ModelState)
-              result.forEach(key => this.errorList.push(err.error.ModelState[key]));
-            });
+              err => {
+                const result = Object.keys(err.error.ModelState)
+                result.forEach(key => this.errorList.push(err.error.ModelState[key]));
+              });
         }
       }
       else {
@@ -69,16 +70,16 @@ export class LoginComponent implements OnInit {
           Email: form.value.Email,
           Password: form.value.Password,
         }
-        
+
         this.credentialService.getAccessToken(this.credential)
-        .subscribe(res => {
-          console.log(res.access_token);
-          localStorage.setItem('access_token', JSON.stringify(res.access_token));
-          window.location.href="/";
-        },
-        err => {
-          console.log(err);
-        });
+          .subscribe(res => {
+            this.access_token = res.access_token;
+            localStorage.setItem('access_token', res.access_token);
+            window.location.href = "/";
+          },
+            err => {
+              console.log(err);
+            });
       }
     }
   }

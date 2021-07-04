@@ -1,3 +1,4 @@
+import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   access_token = localStorage.getItem('access_token');
+
   constructor() { }
 
   ngOnInit(): void {
@@ -14,5 +16,9 @@ export class HeaderComponent implements OnInit {
 
   goToHome():void {
     window.location.href = "/"
+  }
+
+  logout():void {
+    localStorage.removeItem('access_token')
   }
 }

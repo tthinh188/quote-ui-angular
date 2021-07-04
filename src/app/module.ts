@@ -4,3 +4,12 @@ export interface Credential {
     ConfirmPassword: string;
     Role: string;
 }
+
+export interface Quote {
+    QuoteID: number;
+    quoteType: string;
+    Contact: string;
+    Task: string;
+    DueDate: string;
+    TaskType: string;
+}
