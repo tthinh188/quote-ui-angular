@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/services/AppService';
 import { Quote } from 'src/app/module';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -9,8 +10,10 @@ import { Quote } from 'src/app/module';
 })
 export class HomeComponent implements OnInit {
   access_token = localStorage.getItem('access_token');
-  public quotes: Array<Quote> = [];
 
+  public quotes: Array<Quote> = [];
+  public quote!: Quote;
+  editing: boolean = false;
   constructor(private appService: AppService) { }
 
   ngOnInit(): void {
@@ -18,7 +21,7 @@ export class HomeComponent implements OnInit {
   }
 
   handleDelete(ID: number): void {
-    if(this.access_token) {
+    if (this.access_token) {
       this.appService.removeQuote(this.access_token, ID)
         .subscribe(res => {
           this.fetchAllQuotes();
@@ -29,7 +32,15 @@ export class HomeComponent implements OnInit {
   }
 
   goToEdit(ID: number): void {
-    window.location.href = `/edit/${ID}`
+    const findQuote = Object.assign({}, this.quotes.find(q => q.QuoteID === ID))
+    if (findQuote) {
+      this.quote = findQuote;
+      this.editing = true;
+    }
+  }
+
+  closeEditBox(): void {
+    this.editing = false;
   }
 
   fetchAllQuotes(): void {
@@ -41,6 +52,29 @@ export class HomeComponent implements OnInit {
           err => {
             console.log(err);
           });
+    }
+  }
+
+  handleEdit(form: NgForm): void {
+    this.quote = {
+      ... this.quote,
+      QuoteType: form.value.QuoteType,
+      Contact: form.value.Contact,
+      Task: form.value.Task,
+      DueDate: new Date(form.value.DueDate).toISOString().slice(0, 19),
+      TaskType: form.value.TaskType,
+    }
+    if (this.access_token) {
+      this.appService.updateQuote(this.access_token, this.quote)
+        .subscribe(res => {
+          console.log(this.quote)
+          this.fetchAllQuotes();
+          this.editing = false;
+        }, err => {
+          console.log(err);
+        })
+        ;
+
     }
   }
 }

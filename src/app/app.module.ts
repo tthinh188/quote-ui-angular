@@ -21,7 +21,6 @@ import { AppService } from './services/AppService';
 import { AddQuoteComponent } from './components/add-quote/add-quote.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { QuoteDetailsComponent } from './components/quote-details/quote-details.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +29,6 @@ import { QuoteDetailsComponent } from './components/quote-details/quote-details.
     HeaderComponent,
     HomeComponent,
     AddQuoteComponent,
-    QuoteDetailsComponent
   ],
   imports: [
     BrowserModule,
