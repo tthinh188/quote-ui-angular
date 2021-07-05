@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddQuoteComponent } from './components/add-quote/add-quote.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { QuoteDetailsComponent } from './components/quote-details/quote-details.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'addQuote',
     component: AddQuoteComponent,
+  },
+  {
+    path: 'edit/:id',
+    component: QuoteDetailsComponent,
   }
 ];
 

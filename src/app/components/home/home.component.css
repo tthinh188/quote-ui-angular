@@ -15,7 +15,6 @@
     border-radius: 5px;
     box-shadow: 4px 3px 8px 0px rgb(100 152 44 /44%);
     transition-duration: 0.3s;
-    cursor: pointer;
     color: white;
     position: relative;
 }
@@ -46,4 +45,29 @@
 .quote_contact {
     position: absolute;
     bottom: 0px;
+}
+
+.delete-button {
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+    color: crimson;
+}
+
+.delete-button:hover {
+    background-color: crimson;
+    transition: 0.5s linear;
+    color:white;
+}
+
+.edit-button {
+    position: absolute;
+    bottom: 30px;
+    right: 55px;
+    color: greenyellow;
+}
+
+.edit-button:hover {
+    color: white;
+    background-color: rgb(98, 158, 8);
 }

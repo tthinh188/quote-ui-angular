@@ -7,6 +7,13 @@
 
             <p class="quote_time">{{quote.DueDate}}</p>
             <h2 class="quote_contact">{{quote.Contact}}</h2>
+            <button mat-icon-button class="delete-button" (click)="handleDelete(quote.QuoteID)">
+                <mat-icon>delete</mat-icon>
+            </button>
+
+            <button mat-icon-button class="edit-button" (click)="goToEdit(quote.QuoteID)">
+                <mat-icon>edit</mat-icon>
+            </button>
         </div>
     </ng-container>
 

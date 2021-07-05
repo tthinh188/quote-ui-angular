@@ -16,6 +16,12 @@ export class AppService {
 
     addQuote(access_token: string, quote: Quote): Observable<any> {
         let header = new HttpHeaders().set("Authorization", `bearer ${access_token}`);
-        return this.http.post(`${env.BASE_URL}/api/Quote`, quote, { headers: header });
+        return this.http.post(`${env.BASE_URL}/api/Quote/AddQuote`, quote, { headers: header });
+    }
+
+    removeQuote(access_token: string, id: number): Observable<any> {
+        let header = new HttpHeaders().set("Authorization", `bearer ${access_token}`);
+        return this.http.delete(`${env.BASE_URL}/api/Quote/${id}`, { headers: header });
+
     }
 }

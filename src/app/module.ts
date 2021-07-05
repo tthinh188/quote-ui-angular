@@ -7,7 +7,7 @@ export interface Credential {
 
 export interface Quote {
     QuoteID: number;
-    quoteType: string;
+    QuoteType: string;
     Contact: string;
     Task: string;
     DueDate: string;

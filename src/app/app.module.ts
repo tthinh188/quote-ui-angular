@@ -19,6 +19,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { AppService } from './services/AppService';
 import { AddQuoteComponent } from './components/add-quote/add-quote.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { QuoteDetailsComponent } from './components/quote-details/quote-details.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,8 @@ import { AddQuoteComponent } from './components/add-quote/add-quote.component';
     LoginComponent,
     HeaderComponent,
     HomeComponent,
-    AddQuoteComponent
+    AddQuoteComponent,
+    QuoteDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +45,8 @@ import { AddQuoteComponent } from './components/add-quote/add-quote.component';
     MatToolbarModule,
     MatIconModule,
     MatGridListModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
 
   exports: [
@@ -51,6 +57,8 @@ import { AddQuoteComponent } from './components/add-quote/add-quote.component';
     MatToolbarModule,
     MatIconModule,
     MatGridListModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   providers: [CredentialService, AppService],
   bootstrap: [AppComponent]
