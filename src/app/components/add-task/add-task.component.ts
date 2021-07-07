@@ -4,11 +4,11 @@ import { Quote } from 'src/app/module';
 import { AppService } from 'src/app/services/AppService';
 
 @Component({
-  selector: 'app-add-quote',
-  templateUrl: './add-quote.component.html',
-  styleUrls: ['./add-quote.component.css']
+  selector: 'app-add-task',
+  templateUrl: './add-task.component.html',
+  styleUrls: ['./add-task.component.css']
 })
-export class AddQuoteComponent implements OnInit {
+export class AddTaskComponent implements OnInit {
   quote!: Quote
   error: string = '';
   constructor(private appService: AppService) { }
@@ -17,7 +17,7 @@ export class AddQuoteComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  handleAddQuote(form: NgForm): void {
+  handleAddTask(form: NgForm): void {
     console.log(new Date(form.value.DueDate).toISOString().slice(0, 19))
 
     if (form.valid) {

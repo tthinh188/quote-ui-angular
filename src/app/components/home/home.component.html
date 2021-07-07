@@ -2,9 +2,10 @@
     <ng-container *ngFor="let quote of quotes">
         <div class="quote">
             <h1 class="quote_description">
-                "{{quote.Task}}"
+                {{quote.Task}}
             </h1>
-
+            <p>{{quote.QuoteType}}</p>
+            <p>{{quote.TaskType}}</p>
             <p class="quote_time">{{quote.DueDate}}</p>
             <h2 class="quote_contact">{{quote.Contact}}</h2>
             <button mat-icon-button class="delete-button" (click)="handleDelete(quote.QuoteID)">
@@ -25,7 +26,7 @@
         </button>
     
         <form class="editForm" (ngSubmit)="handleEdit(form)" #form="ngForm">
-            <h2>Edit Quote</h2>
+            <h2>Edit Task</h2>
             <mat-form-field class="full-width" appearance="fill">
                 <mat-label>Quote Type</mat-label>
                 <input 

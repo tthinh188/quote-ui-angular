@@ -18,9 +18,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { AppService } from './services/AppService';
-import { AddQuoteComponent } from './components/add-quote/add-quote.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { AddTaskComponent } from './components/add-task/add-task.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     LoginComponent,
     HeaderComponent,
     HomeComponent,
-    AddQuoteComponent,
+    AddTaskComponent,
   ],
   imports: [
     BrowserModule,

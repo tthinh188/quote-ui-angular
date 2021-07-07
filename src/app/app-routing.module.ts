@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddQuoteComponent } from './components/add-quote/add-quote.component';
+import { AddTaskComponent } from './components/add-task/add-task.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 
@@ -14,8 +14,8 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
-    path: 'addQuote',
-    component: AddQuoteComponent,
+    path: 'addTask',
+    component: AddTaskComponent,
   },
 
 ];

@@ -1,9 +1,9 @@
 <mat-toolbar color='primary' class="header">
-    <span class="header_left" (click)="goToHome()">Quote</span>
+    <span class="header_left" (click)="goToHome()">Task</span>
     <nav class="header_right">
         <ul>
             <li><a href="/">Home</a></li>
-            <li *ngIf="access_token"><a href="/addQuote">AddQuote</a></li>
+            <li *ngIf="access_token"><a href="/addTask">AddTask</a></li>
             <li *ngIf="!access_token"><a href="/login">Login</a></li>
             <li *ngIf="access_token" (click)="logout()"><a href="/">Logout</a></li>
         </ul>
