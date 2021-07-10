@@ -25,6 +25,10 @@ table {
     margin: 0 20px;
 }
 
+.mat-row:hover .mat-cell {
+    border-color: currentColor;
+}
+
 /* .quote {
     padding: 20px;
     width: 280px;

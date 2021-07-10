@@ -3,13 +3,21 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50%;
+    width: 30%;
     padding: 20px;
 }
+
+.detail_container {
+    background-color: rgb(129, 233, 252);
+    padding: 20px;
+    border-radius: 20px;
+}
+
 
 .detail-row {
     display: flex;
     justify-content: space-between;
+    font-size: 1.1rem;
 }
 
 .detail-title {
@@ -20,4 +28,21 @@
 .detail-info {
     flex: 0.8;
     text-align: left;
+}
+
+.task_duedate {
+    text-align: center;
+    color: gray;
+}
+
+button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+button:hover {
+    color: white;
+    background-color: black;
+    transition: 0.5s linear;
 }

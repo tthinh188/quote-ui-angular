@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription  } from 'rxjs';
 import { AppService } from 'src/app/services/app.service';
 import { Quote } from 'src/app/module';
@@ -15,7 +15,7 @@ export class DetailsComponent implements OnInit {
   access_token = localStorage.getItem('access_token') || '';
   quote!: Quote;
 
-  constructor(private activatedRoute: ActivatedRoute, private appService: AppService) { }
+  constructor(private activatedRoute: ActivatedRoute, private appService: AppService, private router: Router) { }
 
   ngOnInit(): void {
     this.routeSub = this.activatedRoute.params.subscribe(params => {this.id = params['id']})
@@ -27,6 +27,10 @@ export class DetailsComponent implements OnInit {
         console.log(err);
       },
     )
+  }
+
+  goToHome(): void {
+    this.router.navigate(['/']);
   }
 
 }
