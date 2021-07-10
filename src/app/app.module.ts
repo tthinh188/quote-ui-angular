@@ -21,6 +21,12 @@ import { AppService } from './services/AppService';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { AddTaskComponent } from './components/add-task/add-task.component';
+import { MatTableModule } from '@angular/material/table'
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { EditTaskComponent } from './components/edit-task/edit-task.component';
+import { DetailsComponent } from './components/details/details.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -29,6 +35,8 @@ import { AddTaskComponent } from './components/add-task/add-task.component';
     HeaderComponent,
     HomeComponent,
     AddTaskComponent,
+    EditTaskComponent,
+    DetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +53,11 @@ import { AddTaskComponent } from './components/add-task/add-task.component';
     MatGridListModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSelectModule,
+    MatCheckboxModule,
+
   ],
 
   exports: [
@@ -57,6 +70,10 @@ import { AddTaskComponent } from './components/add-task/add-task.component';
     MatGridListModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSelectModule,
+    MatCheckboxModule,
   ],
   providers: [CredentialService, AppService],
   bootstrap: [AppComponent]

@@ -1,3 +1,11 @@
+table {
+    min-width: 1680px;
+}
+
+.task {
+    width: 50%;
+}
+
 .quotes {
     display: flex;
     flex-wrap: wrap;
@@ -6,7 +14,18 @@
     margin: 20px auto;
 }
 
-.quote {
+.search_container {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.mat-form-field {
+    margin: 0 20px;
+}
+
+/* .quote {
     padding: 20px;
     width: 280px;
     margin: 10px;
@@ -22,7 +41,7 @@
 .quote:hover {
     box-shadow: 4px 3px 11px 6px rgb(100 152 44 /60%);
     transform: translateY(-3px);
-}
+} */
 
 .quote_description {
     word-wrap: break-word;
@@ -33,43 +52,58 @@
 
 .quote_description::-webkit-scrollbar {
     display: none;
-  }
-
-.quote_time {
-    color: lightgray;
-    font-size: 0.7rem;
-    position: absolute;
-    bottom: 40px;
 }
 
-.quote_contact {
-    position: absolute;
-    bottom: 0px;
+.task-action {
+    display: flex;
+    height: 100%;
+    padding: 10px;
+}
+
+.task-action-col {
+    width: 130px;
+}
+
+.visibility-button {
+    color: #300c72;
+}
+
+.visibility-button:hover {
+    background-color: #300c72;
+    transition: 0.5s linear;
+    color:white;
 }
 
 .delete-button {
-    position: absolute;
-    bottom: 30px;
-    right: 20px;
-    color: crimson;
+    color: #f44336;
 }
 
 .delete-button:hover {
-    background-color: crimson;
+    background-color: #f44336;
     transition: 0.5s linear;
     color:white;
 }
 
 .edit-button {
-    position: absolute;
-    bottom: 30px;
-    right: 55px;
-    color: greenyellow;
+    color: #3f51b5;
 }
 
 .edit-button:hover {
     color: white;
-    background-color: rgb(98, 158, 8);
+    background-color: #3f51b5;
+    transition: 0.5s linear;
+}
+
+.quoteID {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.quoteID:hover {
+    text-decoration: none;
+    transition: 0.5s;
+    color: red;
 }
 
 .edit_container {
@@ -104,4 +138,8 @@
     position: absolute;
     right: 0;
     top: 0;
+}
+
+.error {
+    color: red;
 }

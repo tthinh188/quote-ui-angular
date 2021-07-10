@@ -18,8 +18,6 @@ export class AddTaskComponent implements OnInit {
   }
 
   handleAddTask(form: NgForm): void {
-    console.log(new Date(form.value.DueDate).toISOString().slice(0, 19))
-
     if (form.valid) {
       this.quote = {
         ... this.quote,
@@ -30,14 +28,15 @@ export class AddTaskComponent implements OnInit {
         TaskType: form.value.TaskType,
       }
 
-      if(this.access_token)
+      if (this.access_token) {
         this.appService.addQuote(this.access_token, this.quote)
           .subscribe(res => {
+            this.error = '';
             window.location.href = '/';
-          }, err =>{
+          }, err => {
             console.log(err)
-          })
-        ;
+          });
+      }
     }
     else {
       this.error = 'Please fill the required form'

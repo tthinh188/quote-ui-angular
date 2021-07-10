@@ -35,6 +35,8 @@
 
 .form_error {
     color: red;
+    display: flex;
+    flex-direction: column;
 }
 
 button {
