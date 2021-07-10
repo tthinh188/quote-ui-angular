@@ -13,17 +13,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { CredentialService } from './services/credentialService';
+import { CredentialService } from './services/credential.service';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { AppService } from './services/AppService';
+import { AppService } from './services/app.service';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { AddTaskComponent } from './components/add-task/add-task.component';
 import { MatTableModule } from '@angular/material/table'
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { EditTaskComponent } from './components/edit-task/edit-task.component';
 import { DetailsComponent } from './components/details/details.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -35,7 +34,6 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     HeaderComponent,
     HomeComponent,
     AddTaskComponent,
-    EditTaskComponent,
     DetailsComponent,
   ],
   imports: [

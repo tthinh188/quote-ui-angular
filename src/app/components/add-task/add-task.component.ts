@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Quote } from 'src/app/module';
-import { AppService } from 'src/app/services/AppService';
+import { AppService } from 'src/app/services/app.service';
+import { CanLeave } from 'src/app/services/deactivate-guard.service';
 
 @Component({
   selector: 'app-add-task',
   templateUrl: './add-task.component.html',
   styleUrls: ['./add-task.component.css']
 })
-export class AddTaskComponent implements OnInit {
+export class AddTaskComponent implements OnInit, CanLeave {
   quote!: Quote
   error: string = '';
   constructor(private appService: AppService) { }
@@ -39,7 +40,16 @@ export class AddTaskComponent implements OnInit {
       }
     }
     else {
-      this.error = 'Please fill the required form'
+      this.error = 'Please fill the required fields'
+    }
+  }
+
+  canDeactivate() {
+    const confirmResult = confirm('Are you sure you want to leave this page ? ');
+    if (confirmResult === true) {
+      return true;
+    } else {
+      return false;
     }
   }
 }

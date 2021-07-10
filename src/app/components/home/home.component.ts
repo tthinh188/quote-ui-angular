@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { AppService } from 'src/app/services/AppService';
+import { AppService } from 'src/app/services/app.service';
 import { Quote } from 'src/app/module';
 import { NgForm } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
@@ -97,11 +97,12 @@ export class HomeComponent implements OnInit {
     if (findQuote) {
       this.quote = findQuote;
       this.editing = true;
-      console.log('edit called');
     }
   }
 
   closeEditBox(): void {
+    const confirmResult = confirm("Your changed won't be saved, Do you want to exit ?");
+    if(confirmResult)
     this.editing = false;
   }
 
@@ -146,7 +147,7 @@ export class HomeComponent implements OnInit {
           });
       }
     } else {
-      this.error = 'Please fill the required form'
+      this.error = 'Please fill the required fields'
     }
   }
 }

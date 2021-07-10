@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription  } from 'rxjs';
-import { AppService } from 'src/app/services/AppService';
+import { AppService } from 'src/app/services/app.service';
 import { Quote } from 'src/app/module';
 
 @Component({
@@ -19,11 +19,9 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.routeSub = this.activatedRoute.params.subscribe(params => {this.id = params['id']})
-    console.log(this.id);
     this.appService.getQuote(this.access_token, this.id).subscribe(
       res => {
-        this.quote= res;
-        console.log(this.quote);
+        this.quote = res;
       },
       err => {
         console.log(err);

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Credential } from 'src/app/module';
-import { CredentialService } from '../../services/credentialService';
+import { CredentialService } from '../../services/credential.service';
 
 @Component({
   selector: 'app-login',

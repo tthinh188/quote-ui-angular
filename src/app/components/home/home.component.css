@@ -124,6 +124,12 @@ table {
     z-index: 999;
 }
 
+.close-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
 .editForm {
     display: flex;
     flex-direction: column;
@@ -132,12 +138,6 @@ table {
 
 .full-width {
     width: 100%;
-}
-
-.close-button {
-    position: absolute;
-    right: 0;
-    top: 0;
 }
 
 .error {
