@@ -34,7 +34,7 @@
         <button *ngIf="!isLogin" mat-raised-button color="primary" type="submit">SIGN UP</button>
         
     </form>
-    <button *ngIf="isLogin" mat-button (click)="switchMode()">DON'T HAVE AN ACCOUNT? SIGN UP</button>
-    <button *ngIf="!isLogin" mat-button (click)="switchMode()">ALREADY HAVE AN ACCOUNT? SIGN IN</button>
+    <button *ngIf="isLogin" mat-button (click)="switchMode()" color='warn'>DON'T HAVE AN ACCOUNT? SIGN UP</button>
+    <button *ngIf="!isLogin" mat-button (click)="switchMode()" color='warn'>ALREADY HAVE AN ACCOUNT? SIGN IN</button>
 
 </mat-card>
